@@ -1,12 +1,15 @@
 import random
 
 
-R_EATING = ["I don't like eating anything because I'm a bot obvisously!"]
+def random_string():
+    random_list = [
+        "Please try writing something more descriptive.",
+        "Oh! It appears you wrote something I don't understand yet",
+        "Do you mind trying to rephrase that?",
+        "I'm terribly sorry, I didn't quite catch that.",
+        "I can't answer that yet, please try asking something else."
+    ]
+    list_count = len(random_list)
+    random_item = random.randrange(list_count)
 
-
-def unknown():
-    response = ['Cloud you please re-phrase that?',
-                "...",
-                "Sounds about right",
-                "What does that mean?"][random.randrange(4)]
-    return response
+    return random_list[random_item]
