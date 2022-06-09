@@ -2,9 +2,8 @@ import json
 import re
 import longres as lr
 
+
 # Load JSOn data
-
-
 def load_json(file):
     with open(file) as bot_responses:
         print(f"Loaded '{file}' Successfully!")
@@ -16,7 +15,7 @@ response_data = load_json('bot.json')
 
 
 def get_response(input_string):
-    split_message = re.split(r'\r+|[,;?!.-]\s', input_string.lower())
+    split_message = re.split(r'\s+|[,;?!.-]\s*', input_string.lower())
     score_list = []
 
     # Check all the responses
@@ -60,5 +59,5 @@ def get_response(input_string):
 
 
 while True:
-    user_input = input('You:')
-    print('bot:', get_response(user_input))
+    user_input = input("You: ")
+    print("Bot: ", get_response(user_input))  # Get the response from the bot
